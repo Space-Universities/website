@@ -1,0 +1,16 @@
+{% comment %}Replaces the WordPress resource-contribution form: same title and intro, then an email button.{% endcomment %}
+<div class="panel">
+  <h3 class="panel-title">Resource Contribution</h3>
+  <div class="panel-description">
+    <p>Please contribute to our goal by sharing resources for us to host. Please ensure you have permission to share the resource. By sending us a resource, you are giving us permission to host the resource in the Space Universities Network resource bank.</p>
+    <p>Resources submitted will be reviewed by our resources group before being hosted on our website. During this process, we will be in contact with you using the email address you send it from.</p>
+    <p>Please include your name, institution, the resource title, a short description, the topic and the student level(s) it suits, and attach the files or links.</p>
+  </div>
+  <div class="button-row">
+    {% if site.forms.contribute != "" %}
+    <a class="btn" href="{{ site.forms.contribute }}" target="_blank" rel="noopener">Open the contribution form</a>
+    {% else %}
+    <a class="btn" href="mailto:{{ site.contact_email }}?subject=Resource%20contribution">Email your resource to us</a>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,14 @@
+{% comment %}
+  The feedback accordion under posts and resources. The WordPress version held a feedback
+  form; here the first item points people to email instead.
+{% endcomment %}
+<div class="et_pb_accordion_0_tb_body et_pb_accordion et_pb_module et_block_module">
+<div class="et_pb_accordion_item_1_tb_body et_pb_accordion_item et_pb_toggle et_pb_module et_pb_toggle_close et_block_module">
+<h4 class="et_pb_toggle_title">{{ include.first }}</h4>
+<div class="et_pb_toggle_content"><p>We'd love to hear how you used this. Email us at <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>.</p></div>
+</div>
+<div class="et_pb_accordion_item_2_tb_body et_pb_accordion_item et_pb_toggle et_pb_module et_pb_toggle_close et_block_module">
+<h4 class="et_pb_toggle_title">What Others Think</h4>
+<div class="et_pb_toggle_content"><div class="frm_no_entries">No Entries Found</div></div>
+</div>
+</div>

@@ -1,0 +1,55 @@
+---
+layout: default
+body_class: single single-project
+---
+<style>body.single-project .et_pb_section_0_tb_body{background-repeat:no-repeat!important;background-image:url('{{ page.image | default: "/files/2023/11/RFA_One_rocket.png" | relative_url }}')!important}</style>
+<div class="et-l et-l--body">
+<div class="et_builder_inner_content">
+<div class="et_pb_section_0_tb_body et_pb_section et_section_regular et_block_section section_has_divider et_pb_top_divider et_pb_bottom_divider"><div class="et_pb_top_inside_divider"></div>
+<div class="et_pb_row_0_tb_body et_pb_row et_block_row">
+<div class="et_pb_column_0_tb_body et_pb_column et_pb_column_1_2 et_block_column et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_text_1_tb_body et_pb_text et_pb_bg_layout_light et_pb_module et_block_module"><div class="et_pb_text_inner"><h1>{{ page.title }}</h1></div></div>
+<div class="et_pb_module et_pb_button_module_wrapper et_pb_button_0_tb_body_wrapper"><a class="et_pb_button_0_tb_body et_pb_button et_pb_bg_layout_light et_pb_module et_block_module" href="{{ '/sun-resource-bank/' | relative_url }}">See all resources</a></div>
+</div>
+<div class="et_pb_column_1_tb_body et_pb_column et_pb_column_1_2 et-last-child et_block_column et_pb_column_empty et_pb_css_mix_blend_mode_passthrough"></div>
+</div>
+<div class="et_pb_bottom_inside_divider"></div></div>
+<div class="et_pb_section_1_tb_body et_pb_section et_section_regular et_block_section">
+<div class="et_pb_row_1_tb_body et_pb_row et_block_row">
+<div class="et_pb_column_2_tb_body et_pb_column et_pb_column_4_4 et-last-child et_block_column et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_post_content_0_tb_body et_pb_post_content et_pb_module"><div class="et-l et-l--post"><div class="et_builder_inner_content">
+{% if content contains 'et_pb_section' %}{{ content }}{% else %}{% comment %}Markdown posts: wrap them like a one-column Divi section{% endcomment %}
+<div class="et_pb_section et_section_regular et_block_section" style="background-color:transparent"><div class="et_pb_row et_block_row"><div class="et_pb_column et_pb_column_4_4 et-last-child et_block_column"><div class="et_pb_text et_pb_bg_layout_light et_pb_module et_block_module"><div class="et_pb_text_inner">
+{{ content }}
+</div></div></div></div></div>{% endif %}
+</div></div></div>
+</div>
+</div>
+{% if page.link or page.link_embed %}
+<div class="et_pb_row_2_tb_body et_pb_row et_block_row">
+<div class="et_pb_column_3_tb_body et_pb_column et_pb_column_4_4 et-last-child et_block_column et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_text_2_tb_body et_pb_text et_pb_bg_layout_light et_pb_module et_block_module"><div class="et_pb_text_inner"><h3>Link</h3></div></div>
+{% if page.link %}{% if page.link contains '://' %}{% assign link = page.link %}{% else %}{% assign link = page.link | relative_url %}{% endif %}
+<div class="et_pb_text_3_tb_body et_pb_text et_pb_bg_layout_light et_clickable et_pb_module et_block_module" data-href="{{ link }}"><div class="et_pb_text_inner"><p>{{ link | absolute_url }}</p></div></div>
+{% else %}
+<div class="et_pb_text_3_tb_body et_pb_text et_pb_bg_layout_light et_pb_module et_block_module"><div class="et_pb_text_inner">{{ page.link_embed }}</div></div>
+{% endif %}
+</div>
+</div>
+{% endif %}
+<div class="et_pb_row_3_tb_body et_pb_row et_block_row">
+<div class="et_pb_column_4_tb_body et_pb_column et_pb_column_4_4 et-last-child et_block_column et_pb_css_mix_blend_mode_passthrough">
+{% include feedback-accordion.html first="Tell Us How You Used This Resource" %}
+</div>
+</div>
+</div>
+<div class="et_pb_section_2_tb_body et_pb_section et_section_regular et_block_section">
+<div class="et_pb_row_4_tb_body et_pb_row et_block_row">
+<div class="et_pb_column_5_tb_body et_pb_column et_pb_column_4_4 et-last-child et_block_column et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_text_4_tb_body et_pb_text et_pb_bg_layout_light et_pb_module et_block_module"><div class="et_pb_text_inner"><h2>More resources</h2></div></div>
+<div class="et_pb_blog_0_tb_body et_pb_blog et_pb_bg_layout_light et_pb_posts et_pb_module"><div class="et_pb_ajax_pagination_container">{% include divi-posts.html source="resources" limit=3 exclude=page.url image=false meta=true excerpt=true more=true grid=true %}</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>

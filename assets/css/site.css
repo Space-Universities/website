@@ -1,0 +1,82 @@
+/* Space Universities Network – extra styles.
+   Most of the look comes from divi.css (Divi's own styles) and theme.css (the site's Divi
+   settings). This file only covers the parts that were rebuilt for the static site. */
+
+:root {
+  --gold: #f0b323;
+  --btn: #ffc639;
+}
+
+body { background: #000; }
+
+.skip-link { position: absolute; left: -999px; top: 0; z-index: 100000; background: var(--btn); color: #000; padding: 0.6em 1em; font-weight: 700; }
+.skip-link:focus { left: 1rem; top: 1rem; }
+
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible,
+.et_pb_toggle_title:focus-visible, .mobile_menu_bar:focus-visible {
+  outline: 2px solid var(--btn);
+  outline-offset: 3px;
+}
+
+/* video embeds keep a 16:9 shape (Divi used a script for this) */
+.et_pb_video_box iframe, .et_pb_code_inner iframe[src*="youtube"], .et_pb_text_inner iframe[src*="youtube"],
+.et_pb_post_content iframe[src*="youtube"], .et_pb_code_inner iframe[src*="vimeo"] {
+  width: 100%; height: auto; aspect-ratio: 16 / 9; border: 0; display: block;
+}
+
+/* news and resource cards: crop pictures to the same shape as WordPress did */
+.et_pb_posts .entry-featured-image-url img { width: 100%; aspect-ratio: 400 / 250; object-fit: cover; display: block; }
+
+/* panels that replaced the WordPress forms */
+.panel { max-width: 726px; margin: 0 0 30px; color: #fff; }
+.panel .panel-title { font-size: 40px; line-height: 40px; font-weight: 500; color: #fff; margin: 10px 0 60px; padding: 0 0 10px; }
+.panel .panel-description p { font-size: 14px; font-weight: 400; margin: 10px 0 25px; padding: 0; }
+.panel a:not(.btn) { color: var(--gold); font-weight: 700; }
+.button-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 20px 0; }
+.btn {
+  display: inline-block; background: var(--btn); color: #000 !important; font-weight: 700; font-size: 18px;
+  line-height: 1.7; padding: 0.3em 1em; border-radius: 100px; text-decoration: none;
+}
+.btn:hover { background: var(--gold); }
+.btn-outline { background: transparent; color: var(--btn) !important; border: 1px solid #333; border-radius: 3px; }
+.btn-outline:hover { background: transparent; border-color: var(--btn); }
+.muted { color: #c4c4c4; }
+
+/* resource search (styled like the WordPress Formidable form it replaces) */
+.search-form { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 2%; max-width: 952px; margin: 0 0 20px; }
+.search-field { margin-bottom: 20px; }
+.search-field label { display: block; font-size: 15px; font-weight: 400; padding-bottom: 3px; color: #fff; }
+.search-form input, .search-form select {
+  font: 400 14px/18.2px "Open Sans", sans-serif; color: #fff; background: #555; border: 1px solid #bfc3c8;
+  border-radius: 4px; padding: 6px 10px; width: 100%; height: 32px;
+}
+.search-submit { grid-column: 1 / -1; }
+.search-submit button {
+  font: 400 15px "Open Sans", sans-serif; color: #fff; background: #555; border: 0; border-radius: 4px;
+  padding: 10px 20px; margin: 10px 0; box-shadow: 0 1px 1px #fff; cursor: pointer;
+}
+.search-submit button:hover { background: #666; }
+.search-count:empty { display: none; }
+.search-results .et_pb_post { margin-bottom: 30px; }
+.search-results .entry-title a { color: var(--gold); }
+.search-results .post-meta { color: #999; }
+.search-results .more-link { color: var(--gold); }
+@media (max-width: 767px) { .search-form { grid-template-columns: 1fr; } }
+
+/* embedded documents */
+.doc-embed { margin: 0 0 1.5rem; }
+.doc-embed { text-align: center; }
+.doc-embed iframe { width: 80%; height: 700px; border: 0; background: #fff; display: block; margin: 0 auto; }
+/* the "open in a new tab" link stays available to keyboard and screen-reader users, as on WordPress it was hidden */
+.doc-embed p { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); margin: 0; }
+.doc-embed p:focus-within { position: static; width: auto; height: auto; clip: auto; margin: 0.5rem 0 0; }
+
+/* table controls added by site.js use DataTables 2 markup, styled by divi.css (TablePress) */
+.dt-scroll { overflow-x: auto; }
+
+/* background videos fill their section (Divi sized these with mediaelement.js) */
+.et-pb-background-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+@media (prefers-reduced-motion: reduce) {
+  .et-pb-background-video video { display: none; }
+}

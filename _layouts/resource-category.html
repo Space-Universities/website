@@ -1,0 +1,28 @@
+---
+layout: default
+body_class: archive tax-project_category
+---
+<div class="et-l et-l--body">
+<div class="et_builder_inner_content">
+<div class="et_pb_section_0_tb_body et_pb_section et_section_regular et_block_section section_has_divider et_pb_top_divider et_pb_bottom_divider"><div class="et_pb_top_inside_divider"></div>
+<div class="et_pb_row_0_tb_body et_pb_row et_block_row">
+<div class="et_pb_column_0_tb_body et_pb_column et_pb_column_1_2 et_block_column et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_text_0_tb_body et_pb_text et_pb_bg_layout_light et_pb_module et_block_module"><div class="et_pb_text_inner"><h1>{{ page.title }}</h1></div></div>
+<div class="et_pb_text_1_tb_body et_pb_text et_pb_bg_layout_light et_pb_module et_block_module">{% if page.intro_html %}<div class="et_pb_text_inner">{{ page.intro_html }}</div>{% endif %}</div>
+<div class="et_pb_module et_pb_button_module_wrapper et_pb_button_0_tb_body_wrapper"><a class="et_pb_button_0_tb_body et_pb_button et_pb_bg_layout_light et_pb_module et_block_module" href="{{ '/sun-resource-bank/' | relative_url }}">See all resources</a></div>
+</div>
+<div class="et_pb_column_1_tb_body et_pb_column et_pb_column_1_2 et-last-child et_block_column et_pb_column_empty et_pb_css_mix_blend_mode_passthrough"></div>
+</div>
+<div class="et_pb_bottom_inside_divider"></div></div>
+<div class="et_pb_section_1_tb_body et_pb_section et_section_regular et_block_section">
+<div class="et_pb_row_1_tb_body et_pb_row et_block_row">
+<div class="et_pb_column_2_tb_body et_pb_column et_pb_column_4_4 et-last-child et_block_column et_pb_css_mix_blend_mode_passthrough">
+{{ content }}
+{% unless content contains 'et_pb_module' %}
+<div class="et_pb_blog_0_tb_body et_pb_blog et_pb_bg_layout_dark et_pb_posts et_pb_module"><div class="et_pb_ajax_pagination_container">{% include divi-posts.html source="resources" category=page.category image=false meta=false excerpt=false more=false grid=false %}</div></div>
+{% endunless %}
+</div>
+</div>
+</div>
+</div>
+</div>

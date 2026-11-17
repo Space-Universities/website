@@ -1,0 +1,17 @@
+---
+layout: null
+permalink: /search.json
+---
+[
+{%- for r in site.resources -%}
+  {
+    "title": {{ r.title | jsonify }},
+    "url": {{ r.url | relative_url | jsonify }},
+    "image": {{ r.image | default: site.default_image | relative_url | jsonify }},
+    "summary": {{ r.summary | default: "" | jsonify }},
+    "categories": {{ r.categories | jsonify }},
+    "levels": {{ r.levels | default: empty | jsonify }},
+    "text": {{ r.content | strip_html | normalize_whitespace | truncatewords: 400 | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{%- endfor -%}
+]

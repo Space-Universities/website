@@ -1,0 +1,62 @@
+# Main menu. Each item needs a title and url; add "children" for a drop-down.
+# Internal links start with "/", external links with "https://".
+# "icon" picks the little picture before the title: folder, bubble, join or external.
+
+- title: Resource Bank
+  url: /sun-resource-bank/
+  icon: folder
+  children:
+    - title: Case Studies
+      url: /project_category/case-studies/
+    - title: Careers
+      url: /sun-resource-bank/careers/
+      children:
+        - title: The Essential Guide to Landing a Job in the UK Space Sector
+          url: /sun-resource-bank/careers/essential-guide/
+    - title: Class Resources
+      url: /project_category/class-resources/
+    - title: Contribute Resource
+      url: /sun-resource-bank/contribute-resource/
+    - title: ESA Academy
+      url: /sun-resource-bank/esa-academy/
+    - title: Facility database
+      url: /sun-resource-bank/facility-database/
+    - title: Guest speakers
+      url: /sun-resource-bank/guest-speakers/
+    - title: Meetings and Events
+      url: /project_category/events/
+    - title: Outreach resources
+      url: /sun-resource-bank/outreach-resources/
+    - title: Question Bank
+      url: /sun-resource-bank/question-bank/
+    - title: Space Competitions
+      url: /sun-resource-bank/space-competitions/
+    - title: Space Courses
+      url: /sun-resource-bank/space-courses/
+    - title: Space Projects
+      url: /sun-resource-bank/space-projects/
+
+- title: About Us
+  url: /about-us/
+  icon: bubble
+  children:
+    - title: Our Groups
+      url: /about-us/our-groups/
+    - title: Member List
+      url: /about-us/member-list/
+    - title: Funding Opportunities
+      url: /about-us/funding-opportunities/
+    - title: News
+      url: /news/
+    - title: Contact Us
+      url: /about-us/contact-us/
+    - title: Privacy Policy
+      url: /about-us/privacy-policy/
+
+- title: Join Us
+  url: /about-us/contact-us/
+  icon: join
+
+- title: JISC login
+  url: https://www.jiscmail.ac.uk/cgi-bin/webadmin?A0=SUN-ANNOUNCE
+  icon: external

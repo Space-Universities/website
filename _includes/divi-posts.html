@@ -1,0 +1,34 @@
+{% comment %}
+  A list of news posts or resources, marked up like Divi's blog module so it picks up the
+  same styles as the WordPress site.
+    source="posts" (default) or "resources"
+    category      only items in this category (news: category name; resources: category slug)
+    limit         how many to show
+    exclude       leave out the item with this url (e.g. the current page)
+    image, meta, excerpt, more   show the picture / byline / excerpt / "read more" link
+    grid          true for the card grid, false for a plain list
+{% endcomment %}
+{% if include.source == "resources" %}
+  {% assign items = site.resources | sort: "date" | reverse %}
+  {% if include.category %}{% assign items = items | where_exp: "r", "r.categories contains include.category" %}{% endif %}
+  {% assign excerpt_chars = 150 %}
+{% else %}
+  {% if include.category %}{% assign items = site.categories[include.category] | default: empty %}{% else %}{% assign items = site.posts %}{% endif %}
+  {% assign excerpt_chars = 270 %}
+{% endif %}
+{% assign limit = include.limit | default: 1000 %}
+<div class="et_pb_blog_posts {% if include.grid %}et_grid_module{% else %}et_block_module{% endif %}">
+{% assign shown = 0 %}
+{% for item in items %}
+{% if shown >= limit %}{% break %}{% endif %}
+{% if include.exclude and item.url == include.exclude %}{% continue %}{% endif %}
+{% assign shown = shown | plus: 1 %}
+<article class="et_pb_post clearfix {% if include.source == "resources" %}project type-project{% else %}post type-post{% endif %}">
+{% if include.image %}<div class="et_pb_image_container"><a href="{{ item.url | relative_url }}" class="entry-featured-image-url"><img src="{{ item.image | default: site.default_image | relative_url }}" width="400" height="250" alt="{{ item.title | escape }}" loading="lazy"><span data-icon="&#xe050;" class="et_overlay et_pb_inline_icon"></span></a></div>{% endif %}
+<h2 class="entry-title"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
+<p class="post-meta">{% if include.meta %}{% if include.source == "resources" %}<span class="entry-categories">{% for c in item.categories %}<a href="{{ '/project_category/' | append: c | append: '/' | relative_url }}" rel="tag">{{ site.data.resource_categories[c] | default: c }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>{% else %}by <span class="author vcard"><a href="{{ '/news/' | relative_url }}" rel="author">{{ item.author }}</a></span> | <span class="published">{{ item.date | date: "%b %-d, %Y" }}</span>{% if item.categories.size > 0 %} | <span class="entry-categories">{% for c in item.categories %}<a href="{{ '/category/' | append: c | slugify | append: '/' | relative_url }}" rel="tag">{{ c }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>{% endif %}{% endif %}{% endif %}</p>
+<div class="post-content"><div class="post-content-inner">{% if include.excerpt %}<p>{% if include.source == "resources" %}{% assign text = item.summary %}{% else %}{% assign text = item.excerpt %}{% endif %}{% assign text = text | strip_html | strip_newlines | strip %}{% if text.size > excerpt_chars %}{% assign text = text | slice: 0, excerpt_chars | split: " " | pop | join: " " | append: "..." %}{% endif %}{{ text }}</p>{% endif %}</div>{% if include.more %}<a href="{{ item.url | relative_url }}" class="more-link">read more...</a>{% endif %}</div>
+</article>
+{% endfor %}
+</div>
+{% unless include.limit %}<div class="pagination clearfix"><div class="alignleft"></div><div class="alignright"></div></div>{% endunless %}

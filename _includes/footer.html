@@ -1,0 +1,49 @@
+{% comment %}
+  Site footer, marked up like the WordPress (Divi) footer. Section 0 is the desktop
+  layout, section 1 the tablet/phone layout.
+{% endcomment %}
+{% capture logo %}<a href="{{ '/' | relative_url }}"><span class="et_pb_image_wrap"><img src="{{ '/files/2023/11/SUN-logo-white.png' | relative_url }}" alt="{{ site.title }}" loading="lazy"></span></a>{% endcapture %}
+{% capture blurb_rb %}<div class="et_pb_blurb_content"><div class="et_pb_main_blurb_image"><a href="{{ '/sun-resource-bank/' | relative_url }}" tabindex="-1"><span class="et_pb_image_wrap"><span class="et-pb-icon" aria-hidden="true">&#xf07b;</span></span></a></div><div class="et_pb_blurb_container"><h4 class="et_pb_module_header"><a href="{{ '/sun-resource-bank/' | relative_url }}">Resource bank</a></h4></div></div>{% endcapture %}
+{% capture blurb_about %}<div class="et_pb_blurb_content"><div class="et_pb_main_blurb_image"><a href="{{ '/about-us/' | relative_url }}" tabindex="-1"><span class="et_pb_image_wrap"><span class="et-pb-icon" aria-hidden="true">&#xf075;</span></span></a></div><div class="et_pb_blurb_container"><h4 class="et_pb_module_header"><a href="{{ '/about-us/' | relative_url }}">About us</a></h4></div></div>{% endcapture %}
+<footer class="et-l et-l--footer">
+<div class="et_builder_inner_content">
+<div class="et_pb_section_0_tb_footer et_pb_section et_section_regular et_flex_section">
+<div class="et_pb_row_0_tb_footer et_pb_row et_flex_row">
+<div class="et_pb_column_0_tb_footer et_pb_column et_flex_column et_pb_css_mix_blend_mode_passthrough et_flex_column_12_24 et_flex_column_24_24_tablet et_flex_column_24_24_phone">
+<div class="et_pb_image_0_tb_footer et_pb_image et_pb_module et_block_module">{{ logo }}</div>
+</div>
+<div class="et_pb_column_1_tb_footer et_pb_column et_flex_column et_pb_css_mix_blend_mode_passthrough et_flex_column_6_24 et_flex_column_12_24_tablet et_flex_column_24_24_phone">
+<div class="et_pb_blurb_0_tb_footer et_pb_blurb et_pb_bg_layout_light et_pb_blurb_position_left et_pb_module et_block_module">{{ blurb_rb }}</div>
+<div class="et_pb_blurb_1_tb_footer et_pb_blurb et_pb_bg_layout_light et_pb_blurb_position_left et_pb_module et_block_module">{{ blurb_about }}</div>
+</div>
+<div class="et_pb_column_2_tb_footer et_pb_column et-last-child et_flex_column et_pb_css_mix_blend_mode_passthrough et_flex_column_6_24 et_flex_column_12_24_tablet et_flex_column_24_24_phone">
+<div class="et_pb_module et_pb_button_module_wrapper et_pb_button_0_tb_footer_wrapper"><a class="et_pb_button_0_tb_footer et_pb_button et_pb_bg_layout_light et_pb_module et_block_module" data-icon="&#xf2f6;" href="{{ site.jiscmail_url }}" target="_blank" rel="noopener">JISC login</a></div>
+<ul class="et_pb_social_media_follow_0_tb_footer et_pb_social_media_follow clearfix et_pb_bg_layout_light et_pb_text_align_left et_pb_module et_block_module">
+<li class="et_pb_social_media_follow_network_0_tb_footer et_pb_social_media_follow_network et_pb_social_icon et_pb_social_network_link et-social-linkedin et_pb_module et_flex_module"><a class="icon" href="{{ site.linkedin_url }}" title="Follow on LinkedIn"><span class="et_pb_social_media_follow_network_name">Follow</span></a></li>
+<li class="et_pb_social_media_follow_network_1_tb_footer et_pb_social_media_follow_network et_pb_social_icon et_pb_social_network_link et-social-youtube et_pb_module et_flex_module"><a class="icon" href="{{ site.youtube_url }}" title="Follow on Youtube"><span class="et_pb_social_media_follow_network_name">Follow</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="et_pb_section_1_tb_footer et_pb_section et_section_regular et_flex_section">
+<div class="et_pb_row_1_tb_footer et_pb_row et_flex_row">
+<div class="et_pb_column_3_tb_footer et_pb_column et-last-child et_flex_column et_pb_css_mix_blend_mode_passthrough et_flex_column_24_24 et_flex_column_24_24_tablet et_flex_column_24_24_phone">
+<div class="et_pb_image_1_tb_footer et_pb_image et_pb_module et_block_module">{{ logo }}</div>
+</div>
+</div>
+<div class="et_pb_row_2_tb_footer et_pb_row et_flex_row">
+<div class="et_pb_column_4_tb_footer et_pb_column et_flex_column et_pb_css_mix_blend_mode_passthrough et_flex_column_12_24 et_flex_column_12_24_tablet et_flex_column_24_24_phone">
+<div class="et_pb_blurb_2_tb_footer et_pb_blurb et_pb_bg_layout_light et_pb_text_align_left et_pb_blurb_position_left et_pb_module et_block_module">{{ blurb_rb }}</div>
+<div class="et_pb_blurb_3_tb_footer et_pb_blurb et_pb_bg_layout_light et_pb_blurb_position_left et_pb_module et_block_module">{{ blurb_about }}</div>
+</div>
+<div class="et_pb_column_5_tb_footer et_pb_column et-last-child et_flex_column et_pb_css_mix_blend_mode_passthrough et_flex_column_12_24 et_flex_column_12_24_tablet et_flex_column_24_24_phone">
+<div class="et_pb_module et_pb_button_module_wrapper et_pb_button_1_tb_footer_wrapper"><a class="et_pb_button_1_tb_footer et_pb_button et_pb_bg_layout_light et_pb_module et_block_module" data-icon="&#xf2f6;" href="{{ site.jiscmail_url }}" target="_blank" rel="noopener">JISC login</a></div>
+<ul class="et_pb_social_media_follow_1_tb_footer et_pb_social_media_follow clearfix et_pb_bg_layout_light et_pb_text_align_center et_pb_module et_block_module">
+<li class="et_pb_social_media_follow_network_2_tb_footer et_pb_social_media_follow_network et_pb_social_icon et_pb_social_network_link et-social-linkedin et_pb_module et_flex_module"><a class="icon" href="{{ site.linkedin_url }}" title="Follow on LinkedIn"><span class="et_pb_social_media_follow_network_name">Follow</span></a></li>
+<li class="et_pb_social_media_follow_network_3_tb_footer et_pb_social_media_follow_network et_pb_social_icon et_pb_social_network_link et-social-youtube et_pb_module et_flex_module"><a class="icon" href="{{ site.youtube_url }}" title="Follow on Youtube"><span class="et_pb_social_media_follow_network_name">Follow</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</footer>

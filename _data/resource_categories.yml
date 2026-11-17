@@ -1,0 +1,7 @@
+# Names for resource-bank categories (the keys are used in each resource's
+# "categories" list and in /project_category/<key>/ addresses).
+case-studies: Case Studies
+industry-case-studies: Industry Case Studies
+class-resources: Class Resources
+events: Meetings and Events
+facilities-database: Facilities Database

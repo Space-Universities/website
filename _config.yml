@@ -1,0 +1,63 @@
+# Site settings for the Space Universities Network website.
+# After changing this file, GitHub Pages rebuilds the site automatically.
+
+title: Space Universities Network
+short_title: SUN
+description: >-
+  SUN supports teaching staff of space science and engineering in UK higher and
+  further education with resources, events and a community of practice.
+lang: en-GB
+timezone: Europe/London
+
+# The address the site will live at. If you publish to
+# https://<user>.github.io/<repo>/ instead of a custom domain, set
+# url to "https://<user>.github.io" and baseurl to "/<repo>".
+url: "https://sun-ac-uk.github.io"
+baseurl: "/website"
+
+# Contact details and links used in the header, footer and contact pages
+contact_email: sun-group@bristol.ac.uk
+jiscmail_url: https://www.jiscmail.ac.uk/cgi-bin/webadmin?A0=SUN-ANNOUNCE
+linkedin_url: https://www.linkedin.com/company/spaceuniversitiesnetwork/
+youtube_url: https://www.youtube.com/channel/UC0jythXs3CuC-Ld2i-qVDpg
+
+# Optional links to online forms (e.g. Microsoft Forms). Leave blank to
+# show an email link instead.
+forms:
+  contact: ""
+  contribute: ""
+
+# Image used on news/resource cards that have no picture of their own
+default_image: /assets/img/default-card.jpg
+
+# News posts live in _posts/ and are published at /<post-name>/
+permalink: /:title/
+
+collections:
+  resources:
+    output: true
+    permalink: /project/:name/
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "", type: resources }
+    values: { layout: resource }
+  - scope: { path: "" }
+    values: { layout: page }
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: news/feed.xml
+
+exclude:
+  - README.md
+  - EDITING.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - _templates

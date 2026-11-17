@@ -1,0 +1,12 @@
+{% comment %}Resource search. Looks like the old WordPress (Formidable) form; runs in the browser from search.json.{% endcomment %}
+<div class="resource-search" data-index="{{ '/search.json' | relative_url }}">
+<form class="search-form" role="search">
+<div class="search-field"><label for="rs-title">Resource Title</label><input id="rs-title" type="text" name="q" autocomplete="off"></div>
+<div class="search-field"><label for="rs-category">Category</label><select id="rs-category" name="category"><option value=""></option>{% for c in site.data.resource_categories %}<option value="{{ c[0] }}">{{ c[1] }}</option>{% endfor %}</select></div>
+<div class="search-field"><label for="rs-topic">Topic</label><input id="rs-topic" type="text" name="topic" autocomplete="off"></div>
+<div class="search-submit"><button type="submit">Submit</button></div>
+</form>
+<p class="search-count" aria-live="polite"></p>
+<div class="et_pb_blog_posts et_block_module search-results"></div>
+<noscript><p>Search needs JavaScript. You can browse resources by category from the <a href="{{ '/sun-resource-bank/' | relative_url }}">Resource Bank</a>.</p></noscript>
+</div>

@@ -1,0 +1,17 @@
+{% comment %}Replaces the WordPress contact form: same title and intro, then email / mailing-list buttons.{% endcomment %}
+<div class="panel">
+  <h3 class="panel-title">Contact Us</h3>
+  <div class="panel-description">
+    <p>Questions? Suggestions? Want to join our network?</p>
+    <p>Email us at <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a> and we'll get back to you.</p>
+  </div>
+  <div class="button-row">
+    {% if site.forms.contact != "" %}
+    <a class="btn" href="{{ site.forms.contact }}" target="_blank" rel="noopener">Open the contact form</a>
+    {% else %}
+    <a class="btn" href="mailto:{{ site.contact_email }}?subject=SUN%20enquiry">Email the SUN team</a>
+    {% endif %}
+    <a class="btn btn-outline" href="{{ site.jiscmail_url }}" target="_blank" rel="noopener">Join the SUN mailing list</a>
+  </div>
+  <p class="muted">Membership is free. Joining the JISCMail list gets you our monthly updates and access to member content.</p>
+</div>

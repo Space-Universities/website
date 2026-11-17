@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en-GB' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="icon" href="{{ '/assets/img/favicon-32.png' | relative_url }}" sizes="32x32">
+  <link rel="icon" href="{{ '/assets/img/favicon-192.png' | relative_url }}" sizes="192x192">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/divi.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  {% feed_meta %}
+</head>
+{% assign template = page.body_class | default: layout.body_class | default: "page" %}
+<body class="{{ template }} wp-theme-divi et-tb-has-template et-tb-has-header{% if layout.body_class %} et-tb-has-body{% endif %} et-tb-has-footer et_pb_button_helper_class et_cover_background et_pb_gutter et_pb_gutters3 et_pb_pagebuilder_layout{% unless layout.body_class %} et_no_sidebar{% endunless %} et_divi_theme et-db">
+  <a class="skip-link" href="#et-main-area">Skip to content</a>
+  <div id="page-container">
+  <div id="et-boc" class="et-boc">
+  {% include header.html %}
+  <div id="et-main-area">
+  <div id="main-content">
+    {{ content }}
+  </div>
+  </div>
+  {% include footer.html %}
+  </div>
+  </div>
+  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+</body>
+</html>
