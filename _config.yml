@@ -12,7 +12,7 @@ timezone: Europe/London
 # The address the site will live at. If you publish to
 # https://<user>.github.io/<repo>/ instead of a custom domain, set
 # url to "https://<user>.github.io" and baseurl to "/<repo>".
-url: "https://sun-ac-uk.github.io"
+url: "https://space-universities.github.io"
 baseurl: "/website"
 
 # Contact details and links used in the header, footer and contact pages
